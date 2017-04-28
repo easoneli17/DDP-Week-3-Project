@@ -1,0 +1,21 @@
+---
+title: "Week 3 Project"
+author: "Elizabeth Eason"
+date: "April 27, 2017"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+library(plotly)
+mtcars$Miles_Per_Gallon<-mtcars$mpg
+mtcars$Horse_Power<-mtcars$hp
+mtcars$Cyllinders<-as.factor(mtcars$cyl)
+```
+
+## Plotly Plot of mtcars Data Colored by Number of Cyllinders
+
+```{r, message=FALSE, warning=FALSE}
+plot_ly(mtcars, x= ~Miles_Per_Gallon,y= ~Horse_Power,color= ~Cyllinders,mode="markers")
+```
+
